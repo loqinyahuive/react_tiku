@@ -12,12 +12,13 @@ import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import Button from '@material-ui/core/Button';
 
 class tList extends Component {
   state = {
     datalist: [],
     inputText: ''
-  }
+  };
   componentDidMount() {
     this.setState({
       datalist: cmSingleCheckList
@@ -25,20 +26,26 @@ class tList extends Component {
   }
   search() {
     var temp = [];
-    if (this.state.inputText.length > 0) {
-      cmSingleCheckList.map((item) => {
-        if (item.indexOf(this.state.inputText) > -1) {
-          temp.push(item);
-        }
-      });
-      this.setState({
-        datalist: temp
-      });
-    } else {
+    cmSingleCheckList.map(item => {
+      if (item.indexOf(this.state.inputText) > -1) {
+        console.log(item);
+        temp.push(item);
+      }
+    });
+    this.setState({
+      datalist: temp
+    });
+    if (this.state.inputText.length == 0) {
       this.setState({
         datalist: cmSingleCheckList
       });
     }
+  }
+  clear() {
+    this.setState({
+      inputText: '',
+      datalist: cmSingleCheckList
+    });
   }
   render() {
     return (
@@ -50,20 +57,30 @@ class tList extends Component {
           <InputBase
             placeholder="搜题啦"
             inputProps={{ 'aria-label': '搜题啦' }}
-            onChange ={(event) => {
+            value={this.state.inputText}
+            onChange={event => {
               console.log(event.target.value);
               this.setState({
                 inputText: event.target.value
-              })
-            } }
+              });
+            }}
           />
-          <IconButton
+          {/* <IconButton
             type="submit"
             aria-label="search"
-            onClick={() => this.search()}
           >
-            <SearchIcon />
-          </IconButton>
+            <SearchIcon onClick={() => {
+              console.log('*******');
+            }} />
+            
+          </IconButton> */}
+          <Button variant="contained" color="primary" onClick={() => {
+              this.search();
+            }}>搜索</Button>
+            &nbsp;&nbsp;
+            <Button variant="contained" color="primary" onClick={() => {
+              this.clear()
+            }}>清空</Button>
         </Paper>
         <List component="nav" aria-label="secondary mailbox folders">
           {this.state.datalist.map((item, index) => {

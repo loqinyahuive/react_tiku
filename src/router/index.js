@@ -5,10 +5,6 @@ const routes = [
   {
     path: "/",
     component: tList,
-  },
-  {
-    path: "/list",
-    component: tList,
   }
 ];
 
