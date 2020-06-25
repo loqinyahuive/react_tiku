@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import List from '../src/page/list';
 import routes from '../src/router/index'
 
 function App() {

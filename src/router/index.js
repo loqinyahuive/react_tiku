@@ -1,14 +1,14 @@
 
-import List from '../page/list';
+import tList from '../page/list';
 
 const routes = [
   {
     path: "/",
-    component: List,
+    component: tList,
   },
   {
     path: "/list",
-    component: List,
+    component: tList,
   }
 ];
 
