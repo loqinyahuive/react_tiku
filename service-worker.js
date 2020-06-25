@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react_tiku/precache-manifest.3926383c23a17dd945a07534ed50003d.js"
+  "/react_tiku/precache-manifest.ff60ab6bc62a41d8a7e62d2fa77b1455.js"
 );
 
 self.addEventListener('message', (event) => {
