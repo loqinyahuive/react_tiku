@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import cmSingleCheckList from '../asset/json/cm';
+import cmMulCheckList from '../asset/json/multiple';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -89,6 +90,28 @@ class tList extends Component {
             清空
           </Button>
         </Paper>
+
+        <Paper>
+          <FormControlLabel
+            value="1"
+            control={<Checkbox color="primary" />}
+            label="单选题"
+            labelPlacement="单选题"
+          />
+          <FormControlLabel
+            value="2"
+            control={<Checkbox color="primary" />}
+            label="多选题"
+            labelPlacement="多选题"
+          />
+          <FormControlLabel
+            value="3"
+            control={<Checkbox color="primary" />}
+            label="判断题"
+            labelPlacement="判断题"
+          />
+        </Paper>
+
         <List component="nav" aria-label="secondary mailbox folders">
           {this.state.datalist.map((item, index) => {
             var re = new RegExp(this.state.inputText, 'g');
