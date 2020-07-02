@@ -45,7 +45,15 @@ class tList extends Component {
   }
   search() {
     var temp = [];
-    cmSingleCheckList.map(item => {
+    var list = [];
+    if (this.state.current == "single") {
+      list = cmSingleCheckList;
+    } else if (this.state.current == "multiple") {
+      list = cmMulCheckList;
+    } else {
+      list = []
+    }
+    list.map(item => {
       if (item.indexOf(this.state.inputText) > -1) {
         console.log(item);
         temp.push(item);
@@ -55,9 +63,18 @@ class tList extends Component {
       datalist: temp
     });
     if (this.state.inputText.length == 0) {
-      this.setState({
-        datalist: cmSingleCheckList
-      });
+      if (this.state.current == "single") {
+        this.setState({
+          datalist: cmSingleCheckList
+        });
+      } else if (this.state.current == "multiple") {
+        this.setState({
+          datalist: cmMulCheckList
+        });
+      } else {
+        list = []
+      }
+      
     }
   }
   clear() {
