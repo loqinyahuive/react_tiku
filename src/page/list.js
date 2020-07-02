@@ -15,12 +15,29 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-
+import { withStyles } from '@material-ui/core/styles';
+import { green } from '@material-ui/core/colors';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Box from '@material-ui/core/Box';
+import FormControl from '@material-ui/core/FormControl';
 class tList extends Component {
+  
   state = {
     datalist: [],
-    inputText: ''
+    inputText: '',
+    current: 'single'
   };
+  // shouldComponentUpdate(nextProps, nextState){
+  //   console.log(nextProps,nextState)
+  // }
   componentDidMount() {
     this.setState({
       datalist: cmSingleCheckList
@@ -50,10 +67,26 @@ class tList extends Component {
     });
   }
 
+  handleChange = event => {
+    this.setState({ current: event.target.value });
+    if (event.target.value == "single") {
+      this.setState({
+        datalist: cmSingleCheckList
+      });
+    } else if (event.target.value == "multiple") {
+      this.setState({
+        datalist: cmMulCheckList
+      });
+    } else {
+      this.setState({
+        datalist: []
+      });
+    }
+  };
   render() {
     return (
       <div>
-        <Paper component="form">
+        <Box component="form" m={1}>
           <IconButton aria-label="menu">
             <MenuIcon />
           </IconButton>
@@ -70,6 +103,8 @@ class tList extends Component {
               });
             }}
           />
+        </Box>
+        <Box component="div" m={1} style={{ position: 'absolute', top: "10px", right: "5px" }}>
           <Button
             variant="contained"
             color="primary"
@@ -89,28 +124,38 @@ class tList extends Component {
           >
             清空
           </Button>
-        </Paper>
+          </Box>
+        <Box component="div" m={1}>
+        <FormControl component="fieldset">
+          <RadioGroup
+            row
+            aria-label="position"
+            name="position"
+            defaultValue={this.state.current}
+            onChange={this.handleChange}
+          >
+            <FormControlLabel
+              value="single"
+              control={<Radio color="primary" />}
+              label="单选题"
+              labelPlacement="single"
+            />
+            <FormControlLabel
+              value="multiple"
+              control={<Radio color="primary" />}
+              label="多选题"
+              labelPlacement="multiple"
+            />
+            <FormControlLabel
+              value="pd"
+              control={<Radio color="primary" />}
+              label="判断题"
+              labelPlacement="pd"
+            />
+          </RadioGroup>
+          </FormControl>
+        </Box>
 
-        <Paper>
-          <FormControlLabel
-            value="1"
-            control={<Checkbox color="primary" />}
-            label="单选题"
-            labelPlacement="单选题"
-          />
-          <FormControlLabel
-            value="2"
-            control={<Checkbox color="primary" />}
-            label="多选题"
-            labelPlacement="多选题"
-          />
-          <FormControlLabel
-            value="3"
-            control={<Checkbox color="primary" />}
-            label="判断题"
-            labelPlacement="判断题"
-          />
-        </Paper>
 
         <List component="nav" aria-label="secondary mailbox folders">
           {this.state.datalist.map((item, index) => {
