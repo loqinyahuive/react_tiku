@@ -7,6 +7,7 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import cmSingleCheckList from '../asset/json/cm';
 import cmMulCheckList from '../asset/json/multiple';
+import cmPdList from '../asset/json/pd';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
@@ -51,7 +52,7 @@ class tList extends Component {
     } else if (this.state.current == "multiple") {
       list = cmMulCheckList;
     } else {
-      list = []
+      list = cmPdList;
     }
     list.map(item => {
       if (item.indexOf(this.state.inputText) > -1) {
@@ -72,7 +73,7 @@ class tList extends Component {
           datalist: cmMulCheckList
         });
       } else {
-        list = []
+        list = cmPdList
       }
       
     }
@@ -96,7 +97,7 @@ class tList extends Component {
       });
     } else {
       this.setState({
-        datalist: []
+        datalist: cmPdList
       });
     }
   };
