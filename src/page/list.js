@@ -33,7 +33,7 @@ class tList extends Component {
   
   state = {
     datalist: [],
-    inputText: '',
+    inputText: '采煤',
     current: 'single'
   };
   // shouldComponentUpdate(nextProps, nextState){
@@ -55,7 +55,7 @@ class tList extends Component {
       list = cmPdList;
     }
     list.map(item => {
-      if (item.indexOf(this.state.inputText) > -1) {
+      if (item.content.indexOf(this.state.inputText) > -1) {
         console.log(item);
         temp.push(item);
       }
@@ -178,16 +178,33 @@ class tList extends Component {
         <List component="nav" aria-label="secondary mailbox folders">
           {this.state.datalist.map((item, index) => {
             var re = new RegExp(this.state.inputText, 'g');
-            item = item.replace(
-              re,
-              `<span style="color:red">${this.state.inputText}</span>`
-            );
+
+            if(item.content) {
+              item.content = item.content.replace(
+                re,
+                `<span style="color:red">${this.state.inputText}</span>`
+              );
+            }
+
+            if(item.core) {
+              item.core.map(v => {
+                if (v != '') {
+                  if(item.content) {
+                    item.content = item.content.replace(
+                      new RegExp(v, 'g'),
+                      `<span style="color:green;font-weight: bolder">${v}</span>`
+                    );
+                  }
+                }
+              });
+            }
+            
             return (
               <div>
                 <ListItem button>
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: `<div>${index + 1}. ${item}</div>`
+                      __html: `${index + 1}. ${item.content}`
                     }}
                   />
                 </ListItem>
