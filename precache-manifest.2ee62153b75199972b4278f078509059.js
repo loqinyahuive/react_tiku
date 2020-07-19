@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a3edb7581bb80f194b13bf755e2165a",
+    "revision": "4743e43be20a96503098a487540216f4",
     "url": "/react_tiku/index.html"
   },
   {
-    "revision": "7e512a36d8914c380f13",
+    "revision": "2d8077bca475367649f3",
     "url": "/react_tiku/static/css/main.86aed4bd.chunk.css"
   },
   {
-    "revision": "2b3e69762b02150d6927",
-    "url": "/react_tiku/static/js/2.0ff253e8.chunk.js"
+    "revision": "50f8aef5abf13717b9cd",
+    "url": "/react_tiku/static/js/2.95f29719.chunk.js"
   },
   {
     "revision": "89ea5e0ed13930f7b9c9c2f392e27cfe",
-    "url": "/react_tiku/static/js/2.0ff253e8.chunk.js.LICENSE.txt"
+    "url": "/react_tiku/static/js/2.95f29719.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7e512a36d8914c380f13",
-    "url": "/react_tiku/static/js/main.5d524fee.chunk.js"
+    "revision": "2d8077bca475367649f3",
+    "url": "/react_tiku/static/js/main.f797646d.chunk.js"
   },
   {
     "revision": "5c22daa34c0062cfe8a5",
