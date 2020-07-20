@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react_tiku/static/css/main.86aed4bd.chunk.css",
-    "main.js": "/react_tiku/static/js/main.f797646d.chunk.js",
-    "main.js.map": "/react_tiku/static/js/main.f797646d.chunk.js.map",
+    "main.js": "/react_tiku/static/js/main.fad33f40.chunk.js",
+    "main.js.map": "/react_tiku/static/js/main.fad33f40.chunk.js.map",
     "runtime-main.js": "/react_tiku/static/js/runtime-main.6ee0b8cc.js",
     "runtime-main.js.map": "/react_tiku/static/js/runtime-main.6ee0b8cc.js.map",
     "static/js/2.95f29719.chunk.js": "/react_tiku/static/js/2.95f29719.chunk.js",
     "static/js/2.95f29719.chunk.js.map": "/react_tiku/static/js/2.95f29719.chunk.js.map",
     "index.html": "/react_tiku/index.html",
-    "precache-manifest.2ee62153b75199972b4278f078509059.js": "/react_tiku/precache-manifest.2ee62153b75199972b4278f078509059.js",
+    "precache-manifest.a08fc371d88357bf368f55d39ad88c17.js": "/react_tiku/precache-manifest.a08fc371d88357bf368f55d39ad88c17.js",
     "service-worker.js": "/react_tiku/service-worker.js",
     "static/css/main.86aed4bd.chunk.css.map": "/react_tiku/static/css/main.86aed4bd.chunk.css.map",
     "static/js/2.95f29719.chunk.js.LICENSE.txt": "/react_tiku/static/js/2.95f29719.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.6ee0b8cc.js",
     "static/js/2.95f29719.chunk.js",
     "static/css/main.86aed4bd.chunk.css",
-    "static/js/main.f797646d.chunk.js"
+    "static/js/main.fad33f40.chunk.js"
   ]
 }
