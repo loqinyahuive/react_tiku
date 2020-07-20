@@ -122,7 +122,7 @@ class tList extends Component {
             }}
           />
         </Box>
-        <Box component="div" m={1} style={{ position: 'absolute', top: "10px", right: "5px" }}>
+        {/* <Box component="div" m={1} style={{ position: 'absolute', top: "10px", right: "5px" }}>
           <Button
             variant="contained"
             color="primary"
@@ -142,7 +142,37 @@ class tList extends Component {
           >
             清空
           </Button>
-          </Box>
+          </Box> */}
+          &nbsp;&nbsp;
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              this.search();
+            }}
+          >
+            搜索
+          </Button>
+          &nbsp;&nbsp;
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              this.clear();
+            }}
+          >
+            清空
+          </Button>
+          &nbsp;&nbsp;
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            刷新
+          </Button>
         <Box component="div" m={1}>
         <FormControl component="fieldset">
           <RadioGroup
