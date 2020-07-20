@@ -112,7 +112,7 @@ let cmSingleCheckList = [
   {
     content:
       '回采工艺由破煤.装煤.运煤.支护.采空区处理（A）个工序组成.A.5 B.4 C.3 D.7',
-    core: ['']
+    core: ['A.5']
   },
   {
     content:
@@ -370,7 +370,7 @@ let cmSingleCheckList = [
   {
     content:
       '滚筒转速的大小于对装煤能力，（A）和煤尘生成量影响甚大.A煤的块度B.含矸量 C牵引速度D.支架',
-    core: ['']
+    core: ['A煤的块度']
   },
   {
     content:
@@ -561,7 +561,7 @@ let cmSingleCheckList = [
   {
     content:
       '采煤机的白检由维修班长负责，检修时间不少于（B）小时.A.6 B4 C.5 D.7',
-    core: ['']
+    core: ['B4']
   },
   {
     content:
